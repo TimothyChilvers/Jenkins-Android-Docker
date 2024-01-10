@@ -69,3 +69,5 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 USER jenkins
 
 RUN /usr/local/bin/install-plugins.sh git gradle android-emulator ws-cleanup slack embeddable-build-status blueocean github-coverage-reporter jacoco github-pr-coverage-status locale
+RUN curl http://jenkins-ci.touchsurgery.com:8080/jnlpJars/agent.jar -O
+RUN exec java -jar agent.jar
